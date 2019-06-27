@@ -6,8 +6,8 @@
 {% if user.is_authenticated %}
  <br>
   <div class="container">
-    <a href="/contacts/upload" class="top-menu btn btn-primary">Import</a>
-    <a href="/contacts/export" class="top-menu btn btn-primary">Export</a>
+    <a href="/contacts/upload" class="top-menu btn btn-primary">CSV Import</a>
+    <a href="/contacts/export" class="top-menu btn btn-primary">CSV Export</a>
       <a href="{% url 'logout' %}" class="btn btn-primary float-right">Log-out</a>            
     <h2>Address Book</h2>
     <p>Hi {{ user.username }}</p>
