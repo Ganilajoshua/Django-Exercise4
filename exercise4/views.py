@@ -60,7 +60,7 @@ def delete_contact(request, pk):
 @login_required(login_url='/login/')
 def confirm_delete_contact(request,pk):
     contact = get_object_or_404(Contact,pk=pk)
-    if request.user:
+    if request.user == contact.creator:
         contact.delete()
     else:
         print(request.user)
