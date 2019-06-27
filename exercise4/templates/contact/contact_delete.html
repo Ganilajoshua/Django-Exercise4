@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+    <a href="/contacts" class="glyphicon glyphicon-chevron-left btn btn-success">Back</a>
+    {% if user.id == contact.creator.id %}
+    <h6>You want to delete this?</h6>
+        <p>Last Name:{{contact.LastName}}</p>
+        <p>First Name:{{contact.FirstName}}</p>
+        <p>Contact Number:{{contact.ContactNo}}</p>
+        <p>Address:{{contact.Address}}</p>
+        <a href="{% url 'confirm_delete_contact' pk=contact.pk %}"  class="btn btn-danger">Delete</a>
+    </div>
+    {% else %}
+        <h1>NOT FOUND!</h1>
+    {% endif %}
+{% endblock %}

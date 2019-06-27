@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/contacts" class="glyphicon glyphicon-chevron-left btn btn-success">Back</a>
+    {% for contact in contacts%}
+    {% if contact.creator.id == user.id %}
+        <h2>New post</h2>
+        <form method="POST" class="">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-primary">Save</button>
+        </form>
+    {% else %}
+        <h1>NOT FOUND </h1>
+    {% endif %}
+    {% endfor %}
+{% endblock %}
